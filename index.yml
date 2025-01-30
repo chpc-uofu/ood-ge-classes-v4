@@ -5,7 +5,23 @@
 # 2. Are arrays for future-proofing.
 
 apiVersion: v1
-entries: []
-  # xxxx: []
-  # yyyy: []
-  # app-templates: []
+entries:
+  ASTR5560: []
+  ATMOS5100: []
+  ATMOS5340: []
+  ATMOS5550: []
+  ATMOS6040: []
+  ATMOS_SYNOPTIC: []
+  BIOL6120: []
+  BIOL6500: []
+  BMI6015: []
+  BMI6114: []
+  CHEN2450: []
+  CHEN3603: []
+  CHEN_Jupyter: []
+  GEOG5670_desktop: []
+  MIB2020: []
+  PHYS4060: []
+  PHYS_Jupyter: []
+  R25_neurostats: []
+  Spark_Jupyter: []
