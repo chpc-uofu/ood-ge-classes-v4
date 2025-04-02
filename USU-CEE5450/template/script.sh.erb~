@@ -4,8 +4,9 @@
 cd "${HOME}"
 
 # load the class Anaconda environment
-ml use /uufs/chpc.utah.edu/common/home/u0101881/MyModules
-ml miniconda3/cheng
+export PATH=/uufs/chpc.utah.edu/common/home/u6046326/software/pkg/mambaforge/envs/watershed_workflow/bin:/uufs/chpc.utah.edu/common/home/u6046326/software/pkg/mambaforge/bin:$PATH
+export PYTHONPATH="/uufs/chpc.utah.edu/common/home/u6046326/shuai-group1/watershed-workflow/bin:/uufs/chpc.utah.edu/common/home/u6046326/shuai-group1/seacas/lib"
+
 # to export to PDF:
 module load texlive/2019
 
@@ -28,4 +29,4 @@ jupyter --paths
 #jupyter notebook --generate-config 
 # Launch the Jupyter Notebook Server
 # jupyter notebook --config="${CONFIG_FILE}" --debug
-jupyter notebook --config="${CONFIG_FILE}" 
+jupyter lab --config="${CONFIG_FILE}" 

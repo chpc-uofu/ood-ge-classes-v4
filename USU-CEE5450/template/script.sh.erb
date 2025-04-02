@@ -4,7 +4,9 @@
 cd "${HOME}"
 
 # load the class Anaconda environment
-export PATH=/uufs/chpc.utah.edu/common/home/u6046326/software/pkg/mambaforge/envs/watershed_workflow/bin:$PATH
+ml miniforge3/24.9.0
+conda config --add envs_dirs /uufs/chpc.utah.edu/sys/installdir/r8/miniforge3_envs
+conda activate usu-cee5450
 export PYTHONPATH="/uufs/chpc.utah.edu/common/home/u6046326/shuai-group1/watershed-workflow/bin:/uufs/chpc.utah.edu/common/home/u6046326/shuai-group1/seacas/lib"
 
 # to export to PDF:
