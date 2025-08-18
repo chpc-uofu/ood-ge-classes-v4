@@ -14,6 +14,7 @@ cd "${HOME}"
 #conda activate atmos5340 
 module use /uufs/chpc.utah.edu/common/home/u6044586/MyModules
 module load micromamba/latest
+conda config append envs_dirs /uufs/chpc.utah.edu/common/home/u6044586/MySoftware/micromamba/envs
 micromamba activate atmos5340
 # to export to PDF:
 module load texlive/2019
