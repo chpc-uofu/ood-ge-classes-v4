@@ -5,8 +5,10 @@ subcategory: Biomedical Informatics
 role: batch_connect
 description: |
   This app will launch a [Python] environment in a [Jupyter Notebook] server,
-  using the notchpeak-shared-short account/partition the [Notchpeak
-  cluster] using one CPU core for the BMI6015 class.
+  using the notchpeak-shared-short account/partition within the [Notchpeak
+  cluster]. The following computational resource options are available for 
+  the BMI6015 class: 4 cpus OR 8 cpus on the notchpeak-shared-short account/partition
+  OR 1 GPU to utilize a GPU on the [Lonepeak cluster].
  
   [Jupyter Notebook]: https://jupyter.org/
   [Python]: https://www.python.org/
