@@ -1,12 +1,12 @@
 ---
-name: BMI6150
+name: BMI6015
 category: Classes
 subcategory: Biomedical Informatics
 role: batch_connect
 description: |
   This app will launch a [Python] environment in a [Jupyter Notebook] server,
   using the notchpeak-shared-short account/partition the [Notchpeak
-  cluster] using one CPU core for the BMI6114 class.
+  cluster] using one CPU core for the BMI6015 class.
  
   [Jupyter Notebook]: https://jupyter.org/
   [Python]: https://www.python.org/
