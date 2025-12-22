@@ -41,8 +41,8 @@ jupyter lab --config="${CONFIG_FILE}"
   #MC R/4.4.0 has issues with debugging in RStudio
   #module load R/4.4.0
   #export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.4
-  module load R/4.3.2
-  export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.3
+  module load R/4.5.2
+  export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring26-4.5.2
   RSPATH="/uufs/chpc.utah.edu/sys/installdir/rstudio-server/2023.12.0-369/bin/"
   # let the RStudio session use all the threads it can get (we set OMP_NUM_THREADS=1 in some R modules)
   unset OMP_NUM_THREADS
@@ -79,14 +79,14 @@ sed 's/^ \{2\}//' > "${RSESSION_WRAPPER_FILE}" << EOL
   export RSESSION_LOG_FILE="${PWD}/rsession.log"
   export RSTUDIO_DATA_HOME=$WORKDIR
 #  export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.4
-  export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.3
+  export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring26-4.5.2
   exec &>>"\${RSESSION_LOG_FILE}"
   #echo R_LIBS_SITE $R_LIBS_SITE
   #env
   # load all the modules that are set in the Environment section
   #MC R/4.4.0 has issues with debugging in RStudio
   #module load R/4.4.0
-  module load R/4.3.2
+  module load R/4.5.2
 
   echo "Launching rsession..."
   # Note that the rsession brings in limited environment, it imports PATH, LD_LIBRARY_PATH, MANPATH, ...
@@ -205,9 +205,9 @@ module load vscode/1.87.0
 
 #MC R/4.4.0 has issues with debugging in RStudio
 #module load R/4.4.0
-module load R/4.3.2
+module load R/4.5.2
 #export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.4
-export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.3
+export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring26-4.5.2
 # Launch VSCode
 module list
 #set -x
