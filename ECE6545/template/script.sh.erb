@@ -1,0 +1,143 @@
+#!/usr/bin/env bash
+
+# Set working directory to home directory
+
+<%- if context.assignment == "assignment1" -%>
+
+cd "${HOME}"
+
+ml miniforge3/24.9.0
+conda activate /uufs/chpc.utah.edu/common/home/u1604138/miniconda3/envs/ece6545_ex1
+export PYTHONNOUSERSITE=1
+
+# to export to PDF:
+module load texlive/2019
+
+#
+# Start Jupyter Notebook Server
+#
+
+# Workaround for directory permission error
+#unset XDG_RUNTIME_DIR
+#export XDG_RUNTIME_DIR=""
+
+# List available kernels for debugging purposes
+#set -x
+jupyter kernelspec list
+{ set +x; } 2>/dev/null
+echo "TTT - $(date)"
+
+jupyter --paths
+
+#jupyter notebook --generate-config 
+# Launch the Jupyter Notebook Server
+# jupyter notebook --config="${CONFIG_FILE}" --debug
+jupyter lab --config="${CONFIG_FILE}" 
+
+<%- elsif context.assignment == "assignment2"  -%>
+
+cd "${HOME}"
+
+ml miniforge3/24.9.0
+conda activate /uufs/chpc.utah.edu/common/home/u1604138/miniconda3/envs/ece6545_ex2
+export PYTHONNOUSERSITE=1
+
+# to export to PDF:
+module load texlive/2019
+
+#
+# Start Jupyter Notebook Server
+#
+
+# Workaround for directory permission error
+#unset XDG_RUNTIME_DIR
+#export XDG_RUNTIME_DIR=""
+
+# List available kernels for debugging purposes
+#set -x
+jupyter kernelspec list
+{ set +x; } 2>/dev/null
+echo "TTT - $(date)"
+
+jupyter --paths
+
+#jupyter notebook --generate-config
+# Launch the Jupyter Notebook Server
+# jupyter notebook --config="${CONFIG_FILE}" --debug
+jupyter lab --config="${CONFIG_FILE}"
+
+<%- elsif context.assignment == "assignment3"  -%>
+
+cd "${HOME}"
+
+ml miniforge3/24.9.0
+conda activate /uufs/chpc.utah.edu/common/home/u1604138/miniconda3/envs/ece6545_ex3
+export PYTHONNOUSERSITE=1
+
+# to export to PDF:
+module load texlive/2019
+
+#
+# Start Jupyter Notebook Server
+#
+
+# Workaround for directory permission error
+#unset XDG_RUNTIME_DIR
+#export XDG_RUNTIME_DIR=""
+
+# List available kernels for debugging purposes
+#set -x
+jupyter kernelspec list
+{ set +x; } 2>/dev/null
+echo "TTT - $(date)"
+
+jupyter --paths
+
+#jupyter notebook --generate-config
+# Launch the Jupyter Notebook Server
+# jupyter notebook --config="${CONFIG_FILE}" --debug
+jupyter lab --config="${CONFIG_FILE}"
+
+
+<%- else -%>
+
+# Clean the environment
+module purge
+
+# Work around spam message about dconf write permissions
+#export XDG_RUNTIME_DIR="/tmp/${UID}"
+unset XDG_RUNTIME_DIR
+
+# Set working directory to home directory
+cd "${HOME}"
+
+#
+# Launch Xfce Window Manager and Panel
+#
+
+(
+  export SEND_256_COLORS_TO_REMOTE=1
+  export XDG_CONFIG_HOME="<%= session.staged_root.join("config") %>"
+  export XDG_DATA_HOME="<%= session.staged_root.join("share") %>"
+  export XDG_CACHE_HOME="$(mktemp -d)"
+  module restore
+  xfwm4 --compositor=off --sm-client-disable
+  xsetroot -solid "#D3D3D3"
+  xfsettingsd --sm-client-disable
+  xfce4-panel --sm-client-disable
+) &
+
+# Load the required environment
+module load vscode/1.87.0
+
+#MC R/4.4.0 has issues with debugging in RStudio
+#module load R/4.4.0
+module load R/4.5.2
+#export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.4
+export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring26-4.5.2
+# Launch VSCode
+module list
+#set -x
+code
+
+<%- end -%>
