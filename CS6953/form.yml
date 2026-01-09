@@ -1,0 +1,47 @@
+---
+title: "CS6953 desktop"
+attributes:
+#  desktop: "mate"
+  desktop: "xfce"
+  bc_vnc_idle: 0
+  bc_vnc_resolution:
+    required: true
+  cluster:
+    widget: "select"
+    options:
+      - "notchpeak"
+  bc_num_hours:
+    value: 2
+    min: 1
+    max: 8
+    step: 1
+  my_account:
+    label: "Account"
+    widget: "select"
+    options:
+      - "cs6953-gpu-np"
+  my_queue:
+    label: "Partition"
+    widget: "select"
+    options:
+      - "dlair-gpu-np"
+  my_gpu:
+    label: "GPU"
+    help: "This is 1/7th of a A100 GPU, with ~10 GB VRAM, using MIG"
+    widget: "select"
+    options:
+      - "a100_80gb_pcie_1g.10gb"
+  bc_email_on_started:
+    help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
+
+form:
+  - cluster
+  - bc_vnc_idle
+  - desktop
+  - bc_num_hours
+  - my_account
+  - my_queue
+  - my_gpu
+  - bc_vnc_resolution
+  - bc_email_on_started
+
