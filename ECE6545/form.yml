@@ -1,6 +1,12 @@
 ---
 title: "ECE6545"
 attributes:
+  interface:
+      widget: select
+      label: Choose assignment
+      help: "This defines the environment for each assignment you want to work on."
+      options:
+      - [ "Jupyter Notebook", "jupyter" ]
   assignment:
     widget: select
     label: Choose assignment
