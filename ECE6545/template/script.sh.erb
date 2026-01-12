@@ -61,7 +61,7 @@ echo "TTT - $(date)"
 
 jupyter --paths
 
-#jupyter notebook --generate-config
+#jupyter notebook --generate-config 
 # Launch the Jupyter Notebook Server
 # jupyter notebook --config="${CONFIG_FILE}" --debug
 jupyter lab --config="${CONFIG_FILE}"
@@ -93,11 +93,10 @@ echo "TTT - $(date)"
 
 jupyter --paths
 
-#jupyter notebook --generate-config
+#jupyter notebook --generate-config 
 # Launch the Jupyter Notebook Server
 # jupyter notebook --config="${CONFIG_FILE}" --debug
 jupyter lab --config="${CONFIG_FILE}"
-
 
 <%- else -%>
 
@@ -130,11 +129,6 @@ cd "${HOME}"
 # Load the required environment
 module load vscode/1.87.0
 
-#MC R/4.4.0 has issues with debugging in RStudio
-#module load R/4.4.0
-module load R/4.5.2
-#export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.4
-export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring26-4.5.2
 # Launch VSCode
 module list
 #set -x
