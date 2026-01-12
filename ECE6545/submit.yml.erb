@@ -4,14 +4,7 @@
 -%>
 
 batch_connect:
-<%- if interface == "vscode" -%>
-  template: vnc
-<%- else -%>
   template: "basic"
-<%- end -%>
-  conn_params:
-    - csrftoken
-    - interface
 script:
   email: <%= emailaddr %>
   native:
