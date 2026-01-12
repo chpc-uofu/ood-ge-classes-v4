@@ -44,10 +44,3 @@ EOL
 #c.KernelSpecManager.ensure_native_kernel = False
 
 echo csrftoken $csrftoken
-
-<%- else -%>
-
-# Export the module function if it exists
-[[ $(type -t module) == "function" ]] && export -f module
-
-<%- end -%>
