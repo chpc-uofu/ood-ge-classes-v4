@@ -32,6 +32,8 @@ script:
     - "--mem"
     - "32G"
     - "--gres=gpu:1"
+    - "-t"
+    - "01:00:00"
   <%- elsif my_queue == "lonepeak-gpu" -%>
     - "-N"
     - "1"
