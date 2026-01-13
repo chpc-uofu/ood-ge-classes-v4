@@ -4,7 +4,7 @@ attributes:
   interface:
       widget: select
       label: Choose assignment
-      help: "This defines the environment for each assignment you want to work on."
+      help: "Please select which assignment you are working on."
       options:
       - [ "Jupyter Notebook", "jupyter" ]
   assignment:
@@ -15,19 +15,6 @@ attributes:
       - [ "Assignment 1", "assignment1" ]
       - [ "Assignment 2", "assignment2" ]
       - [ "Assignment 3", "assignment3" ]
-  cluster: 
-    widget: "select"
-    options:
-      - "granite"
-      - "notchpeak"
-      - "kingspeak"
-      - "lonepeak"
-  bc_num_hours:
-    value: 1
-    min: 1
-    max: 8
-    step: 1
-    help: "Maximum wall time on notchpeak-shared-short is 8 hours."
   my_queue:
     label: "Partition"
     widget: "select"
@@ -42,8 +29,5 @@ attributes:
 
 form:
   - assignment
-  - cluster
-  - bc_num_hours
-  - my_account
   - my_queue
   - bc_email_on_started
