@@ -38,4 +38,5 @@ attributes:
 form:
   - assignment
   - my_queue
+  - cluster
   - bc_email_on_started
