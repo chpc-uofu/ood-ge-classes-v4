@@ -8,13 +8,64 @@ batch_connect:
 script:
   email: <%= emailaddr %>
   native:
-  <%- if /frisco/.match(cluster) == nil -%>
+  <%- if my_queue == "notchpeak-gpu" -%>
     - "-N"
     - "1"
     - "-n"
-    - 1
+    - 8
     - "-A"
-    - "<%= my_account %>"
+    - "notchpeak-gpu"
     - "-p"
-    - "<%= my_queue %>"
+    - "notchpeak-gpu"
+    - "--mem"
+    - "32G"
+    - "--gres=gpu:1"
+  <%- elsif my_queue == "kingspeak-gpu" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "kingspeak-gpu"
+    - "-p"
+    - "kingspeak-gpu"
+    - "--mem"
+    - "32G"
+    - "--gres=gpu:1"
+  <%- elsif my_queue == "lonepeak-gpu" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "lonepeak-gpu"
+    - "-p"
+    - "lonepeak-gpu"
+    - "--mem"
+    - "32G"
+    - "--gres=gpu:1"
+  <%- elsif my_queue == "coe-class-grn" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "ece6545"
+    - "-p"
+    - "coe-class-grn"
+    - "--qos"
+    - "coe-class-grn"
+    - "--mem"
+    - "32G"
+  <%- elsif my_queue == "coestudent-shared-np" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "coestudent-np"
+    - "-p"
+    - "coestudent-shared-np"
+    - "--mem"
+    - "32G"
   <%- end -%>
