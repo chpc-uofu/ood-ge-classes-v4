@@ -20,6 +20,8 @@ script:
     - "--mem"
     - "32G"
     - "--gres=gpu:1"
+    - "-M"
+    - "notchpeak"
   <%- elsif my_queue == "kingspeak-gpu" -%>
     - "-N"
     - "1"
@@ -32,6 +34,8 @@ script:
     - "--mem"
     - "32G"
     - "--gres=gpu:1"
+    - "-M"
+    - "kingspeak"
   <%- elsif my_queue == "lonepeak-gpu" -%>
     - "-N"
     - "1"
@@ -44,6 +48,8 @@ script:
     - "--mem"
     - "32G"
     - "--gres=gpu:1"
+    - "-M"
+    - "lonepeak"
   <%- elsif my_queue == "coe-class-grn" -%>
     - "-N"
     - "1"
@@ -57,6 +63,8 @@ script:
     - "coe-class-grn"
     - "--mem"
     - "32G"
+    - "-M"
+    - "granite"
   <%- elsif my_queue == "coestudent-shared-np" -%>
     - "-N"
     - "1"
@@ -68,4 +76,6 @@ script:
     - "coestudent-shared-np"
     - "--mem"
     - "32G"
+    - "-M"
+    - "notchpeak"
   <%- end -%>
