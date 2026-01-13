@@ -28,16 +28,6 @@ attributes:
     max: 8
     step: 1
     help: "Maximum wall time on notchpeak-shared-short is 8 hours."
-  my_account:
-    label: "Account"
-    widget: "select"
-    options:
-      - "notchpeak-shared-short"
-      - "ece6545"
-      - "notchpeak-gpu"
-      - "lonepeak-gpu"
-      - "kingspeak-gpu"
-      - "coe-np"
   my_queue:
     label: "Partition"
     widget: "select"
