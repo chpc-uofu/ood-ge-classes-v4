@@ -1,0 +1,16 @@
+---
+name: MEEN6720
+category: Classes
+subcategory: Mechanical Engineering
+role: batch_connect
+description: |
+  This app will launch a [Python] environment in a [Jupyter Notebook] server,
+  using the notchpeak-shared-short account/partition the [Notchpeak
+  cluster] for the MEEN6720 class.
+ 
+  [Jupyter Notebook]: https://jupyter.org/
+  [Python]: https://www.python.org/
+  [HPC cluster]: https://www.chpc.utah.edu/resources/HPC_Clusters.php
+  [Frisco node]: https://www.chpc.utah.edu/documentation/guides/frisco-nodes.php
+  [Notchpeak cluster]: https://www.chpc.utah.edu/documentation/policies/2.1GeneralHPCClusterPolicies.php#Pol2.1.6
+
