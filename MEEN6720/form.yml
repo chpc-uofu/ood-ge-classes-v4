@@ -12,10 +12,12 @@ attributes:
     step: 1
     help: "Maximum wall time of job."
   num_cores:
-    value: 1
-    min: 1
-    max: 8
-    step: 1
+    widget: "select"
+    options:
+      - 2
+      - 4
+      - 8
+      - 16
     help: "Number of cores available for your work."
   num_memory:
     widget: "select"
