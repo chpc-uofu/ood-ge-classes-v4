@@ -19,7 +19,7 @@ attributes:
       - "8"
       - "16"
     help: "Number of cores available for your work."
-    label: "Number of cores"
+    label: "Number of Cores"
   num_memory:
     widget: "select"
     options:
@@ -28,7 +28,7 @@ attributes:
       - "24G"
       - "32G"
     help: "Amount of memory is in gigabytes."
-    label: "Amount of memory, in Gb"
+    label: "Amount of Memory"
   bc_email_on_started:
     help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
 
