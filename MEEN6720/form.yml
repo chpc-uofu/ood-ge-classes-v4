@@ -14,10 +14,10 @@ attributes:
   num_cores:
     widget: "select"
     options:
-      - 2
-      - 4
-      - 8
-      - 16
+      - "2"
+      - "4"
+      - "8"
+      - "16"
     help: "Number of cores available for your work."
   num_memory:
     widget: "select"
