@@ -1,11 +1,6 @@
 <%-
   emailcmd = '/uufs/chpc.utah.edu/sys/bin/CHPCEmailLookup.sh ' + ENV["USER"]
   emailaddr = %x[ #{emailcmd}]
-  if my_job_type == "np8cpu" or my_job_type == "np1gpu"
-    cluster = "notchpeak"
-  elsif my_job_type == "lp2gpu"
-    cluster = "lonepeak"
-  end
 -%>
 
 batch_connect:
