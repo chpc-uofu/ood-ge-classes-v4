@@ -23,8 +23,8 @@ attributes:
     label: "Account:Partition"
     widget: select
     options:
-      - "notchpeak-shared-short:notchpeak-shared-short"
-      - "coestudent-np:coestudent-shared-np"
+      - "coestudent-np:coestudent-np:coestudent-np"
+      - "notchpeak-shared-short:notchpeak-shared-short:notchpeak-shared-short"
 
 form:
   - cluster
