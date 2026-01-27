@@ -1,0 +1,40 @@
+---
+title: "MEEN6720"
+attributes:
+  cluster: 
+    widget: "select"
+    options:
+      - "notchpeak"
+  bc_num_hours:
+    value: 1
+    min: 1
+    max: 8
+    step: 1
+    help: "Maximum wall time of job."
+  num_cores:
+    widget: "select"
+    options:
+      - "2"
+      - "4"
+      - "8"
+      - "16"
+    help: "Number of cores available for your work."
+    label: "Number of Cores"
+  num_memory:
+    widget: "select"
+    options:
+      - "8G"
+      - "16G"
+      - "24G"
+      - "32G"
+    help: "Amount of memory is in gigabytes."
+    label: "Amount of Memory"
+  bc_email_on_started:
+    help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
+
+form:
+  - cluster
+  - bc_num_hours
+  - num_cores
+  - num_memory
+  - bc_email_on_started
