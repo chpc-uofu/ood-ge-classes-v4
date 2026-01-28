@@ -16,7 +16,7 @@ export SPARK_LOG_DIR=$HOME/spark
 export SPARK_MASTER_OPTS="-Dspark.port.maxRetries=63"
 export SPARK_WORKER_OPTS="-Dspark.worker.port.maxRetries=63"
 $SPARK_ROOT/sbin/start-master.sh >& $SPARK_LOG_DIR/master.log
-export SPARK_MASTER_LOGFILE=`cat $SPARK_LOG_DIR/master.log | awk '{print $NF}'`
+export SPARK_MASTER_LOGFILE=`head -n 1 $SPARK_LOG_DIR/master.log | awk '{print $NF}'`
 # the log output is delayed, need to sleep some for the log writeout to finish
 echo Spark master log file is $SPARK_MASTER_LOGFILE
 sleep 30
