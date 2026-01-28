@@ -20,7 +20,7 @@ attributes:
     step: 1
     help: "Maximum is 2."
   custom_accpart:
-    label: "Account:Partition"
+    label: "Account:Partitioni:QOS"
     widget: select
     options:
       - "coestudent-np:coestudent-np:coestudent-np"
