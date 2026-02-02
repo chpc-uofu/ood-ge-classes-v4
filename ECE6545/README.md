@@ -1,3 +1,3 @@
-# Batch Connect - BIOL6500
+# Batch Connect - ECE6545
 
-Combined app for launching Jupyter, RStudio Server and VSCode Desktop for BIOL6500
+App for launching Jupyter for ECE6545.
