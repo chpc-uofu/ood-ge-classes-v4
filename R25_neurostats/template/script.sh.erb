@@ -6,7 +6,7 @@ cd "${HOME}"
 # Reset module environment (may require login shell for some HPC clusters)
 module purge 
 
-module load matlab R/4.2.2 RStudio
+module load matlab R/4.5.2 RStudio
 
 # Ensure that the user's configured login shell is used
 export SHELL="$(getent passwd $USER | cut -d: -f7)"
