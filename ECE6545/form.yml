@@ -27,17 +27,13 @@ attributes:
     options:
       - "coe-class-grn"
       - "coestudent-shared-np"
-      - "notchpeak-gpu"
-      - "kingspeak-gpu"
-      - "lonepeak-gpu"
+      - "coe-gpu-class-grn"
   cluster:
     help: "In the partition naming, sometimes the cluster is shortened as such - grn=granite, np=notchpeak."
     widget: "select"
     options:
       - "granite"
       - "notchpeak"
-      - "kingspeak"
-      - "lonepeak"
   bc_email_on_started:
     help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
 
