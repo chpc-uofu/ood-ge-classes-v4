@@ -5,7 +5,9 @@ subcategory: Electrical and Computer Engineering
 role: batch_connect
 description: |
   This app will launch a [Python] environment in a [Jupyter Notebook] server,
-  using 8 CPU cores for ECE6545 course.
+  using 8 CPU cores and, optionally, a GPU for the ECE6545 course.
+  
+  NOTE: Usage of the notchpeak-gpu, kingspeak-gpu, and lonepeak-gpu partitions may incur wait times for the GPUs to become available. Please plan accordingly.
  
   [Jupyter Notebook]: https://jupyter.org/
   [Python]: https://www.python.org/

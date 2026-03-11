@@ -46,4 +46,46 @@ script:
     - "--mem"
     - "32G"
     - "--gres=gpu:rtxpr4000bl:1"
+  <%- elsif my_queue == "notchpeak-gpu" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "notchpeak-gpu"
+    - "-p"
+    - "notchpeak-gpu"
+    - "--qos"
+    - "notchpeak-gpu"
+    - "--mem"
+    - "32G"
+    - "--gres=gpu:1
+  <%- elsif my_queue == "kingspeak-gpu" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "kingspeak-gpu"
+    - "-p"
+    - "kingspeak-gpu"
+    - "--qos"
+    - "kingspeak-gpu"
+    - "--mem"
+    - "32G"
+    - "--gres=gpu:1
+  <%- elsif my_queue == "lonepeak-gpu" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 8
+    - "-A"
+    - "lonepeak-gpu"
+    - "-p"
+    - "lonepeak-gpu"
+    - "--qos"
+    - "lonepeak-gpu"
+    - "--mem"
+    - "32G"
+    - "--gres=gpu:1
 <%- end -%>

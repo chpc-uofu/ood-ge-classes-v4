@@ -28,6 +28,9 @@ attributes:
       - "coe-class-grn"
       - "coestudent-shared-np"
       - "coe-gpu-class-grn"
+      - "notchpeak-gpu"
+      - "kingspeak-gpu"
+      - "lonepeak-gpu"
   cluster:
     help: "In the partition naming, sometimes the cluster is shortened as such - grn=granite, np=notchpeak."
     widget: "select"
