@@ -39,7 +39,11 @@ jupyter lab --config="${CONFIG_FILE}"
 cd "${HOME}"
 
 ml miniforge3/24.9.0
-conda activate /uufs/chpc.utah.edu/common/home/u1604138/miniconda3/envs/ece6545_cuda118_ex2
+<%- if context.cluster == "granite"  -%>
+  conda activate /uufs/chpc.utah.edu/common/home/u1604138/miniconda3/envs/ece6545_ex2
+<%- else -%>
+  conda activate /uufs/chpc.utah.edu/common/home/u1604138/miniconda3/envs/ece6545_cuda118_ex2
+<%- end -%>
 export PYTHONNOUSERSITE=1
 
 # to export to PDF:
