@@ -78,7 +78,7 @@ script:
     - "-N"
     - "1"
     - "-n"
-    - 8
+    - 2
     - "-A"
     - "lonepeak-gpu"
     - "-p"
@@ -86,6 +86,7 @@ script:
     - "--qos"
     - "lonepeak-gpu"
     - "--mem"
-    - "32G"
+    - "16G"
     - "--gres=gpu:1"
+    - "--researvationname=ece6545"
 <%- end -%>
