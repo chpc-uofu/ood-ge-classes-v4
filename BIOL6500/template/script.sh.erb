@@ -36,6 +36,37 @@ jupyter --paths
 # jupyter notebook --config="${CONFIG_FILE}" --debug
 jupyter lab --config="${CONFIG_FILE}" 
 
+<%- elsif context.interface == "deeplearning" -%>
+
+cd "${HOME}"
+
+ml deeplearning/2024.2.0
+export PYTHONNOUSERSITE=1
+
+# to export to PDF:
+module load texlive/2019
+
+#
+# Start Jupyter Notebook Server
+#
+
+# Workaround for directory permission error
+#unset XDG_RUNTIME_DIR
+#export XDG_RUNTIME_DIR=""
+
+# List available kernels for debugging purposes
+#set -x
+jupyter kernelspec list
+{ set +x; } 2>/dev/null
+echo "TTT - $(date)"
+
+jupyter --paths
+
+#jupyter notebook --generate-config 
+# Launch the Jupyter Notebook Server
+# jupyter notebook --config="${CONFIG_FILE}" --debug
+jupyter lab --config="${CONFIG_FILE}" 
+
 <%- elsif context.interface == "rstudio"  -%>
 
   #MC R/4.4.0 has issues with debugging in RStudio
