@@ -72,9 +72,6 @@ jupyter lab --config="${CONFIG_FILE}"
 
 <%- elsif context.interface == "rstudio"  -%>
 
-  #MC R/4.4.0 has issues with debugging in RStudio
-  #module load R/4.4.0
-  #export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring25-4.4
   module load R/4.5.2
   export R_LIBS=/uufs/chpc.utah.edu/sys/installdir/r8/RLibs/biol6500-spring26-4.5.2
   RSPATH="/uufs/chpc.utah.edu/sys/installdir/rstudio-server/2024.12.0-467/bin/"
@@ -92,7 +89,7 @@ WORKDIR=/scratch/local/${USER}/${SLURM_JOB_ID}
 export RSTUDIO_AUTH="${PWD}/bin/auth"
 
 # bring SLURM environment into the R session
-env |grep SLURM > ${PWD}/slurmenv.sh
+env | grep SLURM > ${PWD}/slurmenv.sh
 sed -i 's/SLURM/export SLURM/g' ${PWD}/slurmenv.sh
 
 # Generate an `rsession` wrapper script
