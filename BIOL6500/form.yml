@@ -7,7 +7,7 @@ attributes:
     help: "This defines the interface you want to start (Python Jupyter or R RStudio)."
     options:
       - [ "Python Jupyter", "jupyter" ]
-      - [" Python Deep Learning", "deeplearning" ]
+      #- [" Python Deep Learning", "deeplearning" ]
       - [ "R RStudio", "rstudio" ]
   cluster: 
     widget: "select"
