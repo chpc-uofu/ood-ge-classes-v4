@@ -1,0 +1,50 @@
+<%-
+  emailcmd = '/uufs/chpc.utah.edu/sys/bin/CHPCEmailLookup.sh ' + ENV["USER"]
+  emailaddr = %x[ #{emailcmd}]
+-%>
+
+batch_connect:
+  template: "basic"
+script:
+  email: <%= emailaddr %>
+  native:
+  <%- if my_queue == "coe-class-grn" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 2
+    - "-A"
+    - "chen6400"
+    - "-p"
+    - "coe-class-grn"
+    - "--qos"
+    - "coe-students-grn"
+    - "--mem"
+    - "10G"
+  <%- elsif my_queue == "coestudent-np" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 2
+    - "-A"
+    - "chen6400"
+    - "-p"
+    - "coestudent-np"
+    - "--qos"
+    - "coestudent-np"
+    - "--mem"
+    - "10G"  
+  <%- elsif my_queue == "notchpeak-shared-short" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 2
+    - "-A"
+    - "notchpeak-shared-short"
+    - "-p"
+    - "notchpeak-shared-short"
+    - "--qos"
+    - "notchpeak-shared-short"
+    - "--mem"
+    - "10G"       
+  <%- end -%>
