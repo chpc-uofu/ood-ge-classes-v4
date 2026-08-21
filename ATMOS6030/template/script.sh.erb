@@ -6,6 +6,7 @@ cd "${HOME}"
 # load the CHPC python with Jupyter, NumPy, Pandas
 ml miniforge3
 conda activate atmos6030
+
 # to export to PDF:
 module load texlive/2019
 
@@ -28,4 +29,5 @@ jupyter --paths
 #jupyter notebook --generate-config 
 # Launch the Jupyter Notebook Server
 # jupyter notebook --config="${CONFIG_FILE}" --debug
-jupyter notebook --config="${CONFIG_FILE}" 
+#jupyter notebook --config="${CONFIG_FILE}" 
+jupyter lab --config="${CONFIG_FILE}" 
