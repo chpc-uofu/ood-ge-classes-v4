@@ -1,0 +1,28 @@
+---
+title: "ATMOS6030"
+attributes:
+  cluster: 
+    widget: "select"
+    options:
+      - "notchpeak"
+      - "kingspeak"
+      - "lonepeak"
+  bc_num_hours:
+    value: 1
+    min: 1
+    max: 8
+    step: 1
+    help: "Maximum wall time on notchpeak-shared-short is 8 hours."
+  my_queue:
+    label: "Partition"
+    widget: "select"
+    options:
+      - "notchpeak-shared-short"
+      - "kingspeak"
+      - "lonepeak"
+
+form:
+  - cluster
+  - bc_num_hours
+  - my_queue
+  - bc_email_on_started
