@@ -1,0 +1,50 @@
+<%-
+  emailcmd = '/uufs/chpc.utah.edu/sys/bin/CHPCEmailLookup.sh ' + ENV["USER"]
+  emailaddr = %x[ #{emailcmd}]
+-%>
+
+batch_connect:
+  template: "basic"
+script:
+  email: <%= emailaddr %>
+  native:
+  <%- if my_queue == "lonepeak" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 2
+    - "-A"
+    - "atmos6030"
+    - "-p"
+    - "lonepeak"
+    - "--qos"
+    - "lonepeak"
+    - "--mem"
+    - "10G"
+  <%- elsif my_queue == "kingspeak" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 2
+    - "-A"
+    - "atmos6030"
+    - "-p"
+    - "kingspeak"
+    - "--qos"
+    - "kingspeak"
+    - "--mem"
+    - "10G"  
+  <%- elsif my_queue == "notchpeak-shared-short" -%>
+    - "-N"
+    - "1"
+    - "-n"
+    - 2
+    - "-A"
+    - "notchpeak-shared-short"
+    - "-p"
+    - "notchpeak-shared-short"
+    - "--qos"
+    - "notchpeak-shared-short"
+    - "--mem"
+    - "10G"       
+  <%- end -%>
