@@ -3,7 +3,7 @@
   emailaddr = %x[ #{emailcmd}]
   if my_job_type == "np4cpu" 
     cluster = "notchpeak"
-  elsif my_job_type == "lp2gpu"
+  elsif my_job_type == "lp1gpu"
     cluster = "lonepeak"
   end
 -%>
@@ -33,4 +33,5 @@ script:
     - "-p"
     - "lonepeak-gpu"
     - "--gres=gpu:1080ti:1"
+    - "--reservation=mktg6620"
   <%- end -%>
