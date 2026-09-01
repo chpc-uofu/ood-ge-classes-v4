@@ -8,33 +8,23 @@ attributes:
     options:
       - [ "Python Jupyter", "jupyter" ]
       - [ "R RStudio", "rstudio" ]
-  cluster: 
-    widget: "select"
-    options:
-      - "notchpeak"
   bc_num_hours:
     value: 1
     min: 1
     max: 8
     step: 1
     help: "Maximum wall time on notchpeak-shared-short is 8 hours."
-  my_account:
-    label: "Account"
+  my_job_type:
+    label: "Type of job"
     widget: "select"
     options:
-      - "notchpeak-shared-short"
-  my_queue:
-    label: "Partition"
-    widget: "select"
-    options:
-      - "notchpeak-shared-short"
+      - ['4 CPUs', 'np4cpu']
+      - ['1 GPUs, GeForce 1080Ti', 'lp1gpu']
   bc_email_on_started:
     help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
 
 form:
   - interface
-  - cluster
   - bc_num_hours
-  - my_account
-  - my_queue
+  - my_job_type
   - bc_email_on_started

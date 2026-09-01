@@ -1,27 +1,36 @@
 <%-
   emailcmd = '/uufs/chpc.utah.edu/sys/bin/CHPCEmailLookup.sh ' + ENV["USER"]
   emailaddr = %x[ #{emailcmd}]
+  if my_job_type == "np4cpu" 
+    cluster = "notchpeak"
+  elsif my_job_type == "lp2gpu"
+    cluster = "lonepeak"
+  end
 -%>
 
 batch_connect:
-<%- if interface == "vscode" -%>
-  template: vnc
-<%- else -%>
   template: "basic"
-<%- end -%>
-  conn_params:
-    - csrftoken
-    - interface
+cluster: "<%= cluster %>"
 script:
   email: <%= emailaddr %>
   native:
-  <%- if /frisco/.match(cluster) == nil -%>
     - "-N"
     - "1"
+  <%- if my_job_type == "np4cpu" -%>
     - "-n"
-    - 1
+    - 4
+    - "--ntasks-per-node=4"
     - "-A"
-    - "<%= my_account %>"
+    - "notchpeak-shared-short"
     - "-p"
-    - "<%= my_queue %>"
+    - "notchpeak-shared-short"
+  <%- elsif my_job_type == "lp1gpu" -%>
+    - "-n"
+    - 4
+    - "--ntasks-per-node=4"
+    - "-A"
+    - "lonepeak-gpu"
+    - "-p"
+    - "lonepeak-gpu"
+    - "--gres=gpu:1080ti:1"
   <%- end -%>
