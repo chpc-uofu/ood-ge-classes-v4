@@ -19,7 +19,7 @@ attributes:
     widget: "select"
     options:
       - ['4 CPUs', 'np4cpu']
-      - ['1 GPUs, GeForce 1080Ti', 'lp1gpu']
+      - ['1 GPU, GeForce 1080Ti', 'lp1gpu']
   bc_email_on_started:
     help: "If you do not receive the email, check your [Profile](https://www.chpc.utah.edu/role/user/edit_profile.php) for correct address."
 
