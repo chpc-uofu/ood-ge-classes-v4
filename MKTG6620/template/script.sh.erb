@@ -18,8 +18,9 @@ module load texlive/2019
 
 # Symlink to Himanshu's directory
 # Configuration: Set the source directory and the target symlink path
+mkdir -p ~/mktg6620_workspace
 SOURCE_DIR="/uufs/chpc.utah.edu/common/home/u0521228/mktg6620"
-LINK_PATH="$HOME/mktg6620-t1"
+LINK_PATH="$HOME/mktg6620-t1-assignments"
 
 # Check if the symlink or file already exists at the target path
 if [ -L "$LINK_PATH" ]; then
